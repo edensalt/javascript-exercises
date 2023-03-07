@@ -17,7 +17,7 @@ const sum = function(array) {
 const multiply = function(array) {
   let output = 1;
   for (i = 0; i < array.length; i++) {
-    output *= array[i]
+    output *= array[i];
   }
   return output;
 };
@@ -26,8 +26,13 @@ const power = function(a, b) {
 	return a ** b;
 };
 
-const factorial = function() {
-	
+const factorial = function(a) {
+	let output = 1;
+  
+  for (i = a; i > 0; i--) {
+    output *= i;
+  }
+  return output;
 };
 
 // Do not edit below this line
