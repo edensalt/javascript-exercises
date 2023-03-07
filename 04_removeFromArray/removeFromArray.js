@@ -1,9 +1,9 @@
 const removeFromArray = function(currentArray, ...criteria) { // composed of current array and removed variables
     return currentArray.filter((element) => {
-        let isMatch = false;
+        let isMatch = true;
         criteria.forEach((criterion) => {
-            if (!criterion(element)) {
-                isMatch = true;
+            if (criterion === element) {
+                isMatch = false;
             }
         });
         return isMatch;
