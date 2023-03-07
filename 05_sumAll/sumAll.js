@@ -10,7 +10,7 @@ const sumAll = function(startInt, endInt) { // set start and end int
     } let total = 0 ;
     let currentInt = 0;
 
-    for (i = 0; i <= (endInt - startInt); i++) {
+    for (i = 0; i <= Math.abs(startInt - endInt); i++) {
         currentInt++;
         total += currentInt;
     }
