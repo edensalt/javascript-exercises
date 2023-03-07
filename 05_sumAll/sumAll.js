@@ -2,7 +2,7 @@ const sumAll = function(startInt, endInt) { // set start and end int
     
     // return error if calculation cannot be made
 
-    if (typeof startInt !== "number" || typeof endInt !== "number") {
+    if (typeof startInt !== "number" || typeof endInt !== "number" || startInt < 0 || endInt < 0) {
         return "ERROR";
     
     // establish baseline for current total and current integer
