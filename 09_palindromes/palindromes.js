@@ -1,22 +1,42 @@
 const palindromes = function (word) {
 
+    // remove non-letters from the word
+
+    let lettersOnly = word.replaceAll(/[^a-zA-Z]/g, "");
+
+    console.log(lettersOnly);
+
+    // make the word all lowercase
+
+    let forwardLower = lettersOnly.toLowerCase();
+
+    console.log(forwardLower);
+    
     // split the word into an array
 
-    let palTest = word.toLowerCase().split("");
+    let forwardArray = forwardLower.split("");
 
-    // make the forward word just letters
+    console.log(forwardArray);
 
-    let palForward = palTest.join("");
+    // reverse the array
 
-    // make the backward word just letters, reversed
+    let backwardArray = forwardArray.reverse();
 
-    let palBackward = palTest.reverse().join("");
+    console.log(backwardArray);
 
-    if (palForward === palBackward) {
+    // join the array into a backward word
+
+    let backwardLower = backwardArray.join("");
+
+    console.log(backwardLower);
+
+    // check if backward and forward are the same
+
+    if (forwardLower === backwardLower) {
         return true;
     } else return false;
 
-};
+}
 
 // Do not edit below this line
 module.exports = palindromes;
