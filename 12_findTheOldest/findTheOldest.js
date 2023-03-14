@@ -4,8 +4,6 @@ const findTheOldest = function(people) {
 
     people.forEach(person => {
         let age = person.yearOfDeath - person.yearOfBirth;
-
-        console.log(age);
         
         if (isNaN(age)) {
             const today = new Date();
@@ -13,18 +11,17 @@ const findTheOldest = function(people) {
             age = year - person.yearOfBirth;
         }
 
-        console.log(age);
-
         person.age = age;
-    })
-
-    console.log(people);
+    });
 
     // sort the array to find the oldest person
 
-    const ageSort = people.sort(function(a, b){return b.age - a.age});
+    const ordered = people.sort((a, b) => a.age > b.age ? -1: 1);
+    return ordered[0];
 
-    return ageSort[0];
+    // const ageSort = people.sort(function(a, b){return b.age - a.age});
+
+    // return ageSort[0];
 };
 
 // Do not edit below this line
